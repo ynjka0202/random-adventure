@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Түүх: бүх сорилыг шүүлттэй хүснэгтээр. -->
+<VBox spacing="16.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="mn.adventure.controller.HistoryController">
+   <VBox spacing="4.0">
+      <Label styleClass="h1" text="Түүх" />
+      <Label styleClass="muted" text="Бүх сорилын бүртгэл" />
+   </VBox>
+   <HBox alignment="CENTER_LEFT" spacing="10.0">
+      <TextField fx:id="searchField" prefWidth="240.0" promptText="Сорилоор хайх…" />
+      <ComboBox fx:id="statusBox" />
+      <ComboBox fx:id="categoryBox" />
+      <Region HBox.hgrow="ALWAYS" />
+      <Label fx:id="countLabel" styleClass="muted" text="0 бичлэг" />
+   </HBox>
+   <TableView fx:id="table" prefHeight="560.0" VBox.vgrow="ALWAYS">
+      <columns>
+         <TableColumn fx:id="colDate" prefWidth="110.0" text="Огноо" />
+         <TableColumn fx:id="colTitle" prefWidth="300.0" text="Сорил" />
+         <TableColumn fx:id="colCategory" prefWidth="150.0" text="Ангилал" />
+         <TableColumn fx:id="colDifficulty" prefWidth="120.0" text="Хүндрэл" />
+         <TableColumn fx:id="colStatus" prefWidth="130.0" text="Төлөв" />
+         <TableColumn fx:id="colXp" prefWidth="80.0" text="XP" />
+      </columns>
+      <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+      <placeholder><Label styleClass="muted" text="Түүх хоосон байна. Өнөөдрийн сорилоо сугалаад эхлээрэй!" /></placeholder>
+   </TableView>
+</VBox>

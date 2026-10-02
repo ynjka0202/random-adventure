@@ -1,0 +1,259 @@
+/* ============================================================
+   Random Adventure — үндсэн стиль (өнгө нь dark.css / light.css-ээс)
+   ============================================================ */
+.root {
+    -fx-font-family: "Segoe UI", "Noto Sans", "Arial";
+    -fx-font-size: 14px;
+    -fx-background-color: -c-bg;
+    -fx-text-fill: -c-text;
+    -fx-accent: -c-primary;
+    -fx-focus-color: -c-primary;
+    -fx-faint-focus-color: transparent;
+    -fx-control-inner-background: -c-surface;
+    -fx-base: -c-surface-2;
+}
+.label { -fx-text-fill: -c-text; }
+.muted { -fx-text-fill: -c-muted; }
+.h1 { -fx-font-size: 26px; -fx-font-weight: bold; }
+.h2 { -fx-font-size: 18px; -fx-font-weight: bold; }
+.h3 { -fx-font-size: 15px; -fx-font-weight: bold; }
+.small { -fx-font-size: 12px; }
+.gold { -fx-text-fill: -c-gold; }
+.primary-text { -fx-text-fill: -c-primary; }
+.success-text { -fx-text-fill: -c-success; }
+.error-text { -fx-text-fill: -c-danger; }
+
+/* ---------- Товчнууд ---------- */
+.button {
+    -fx-background-color: -c-surface-2;
+    -fx-text-fill: -c-text;
+    -fx-background-radius: 10;
+    -fx-border-color: -c-border;
+    -fx-border-radius: 10;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-font-weight: 600;
+}
+.button:hover { -fx-background-color: -c-border; }
+.button:disabled { -fx-opacity: 0.5; }
+.btn-primary { -fx-background-color: -c-primary; -fx-text-fill: -c-on-primary; -fx-border-color: -c-primary; }
+.btn-primary:hover { -fx-background-color: -c-primary-strong; }
+.btn-gold { -fx-background-color: -c-gold; -fx-text-fill: #1f1300; -fx-border-color: -c-gold; }
+.btn-gold:hover { -fx-opacity: 0.9; }
+.btn-success { -fx-background-color: -c-success-soft; -fx-text-fill: -c-success; -fx-border-color: transparent; }
+.btn-ghost { -fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: -c-muted; }
+.btn-ghost:hover { -fx-background-color: -c-surface-2; -fx-text-fill: -c-text; }
+.btn-danger { -fx-text-fill: -c-danger; -fx-background-color: transparent; }
+.btn-lg { -fx-font-size: 16px; -fx-padding: 12 24; -fx-background-radius: 12; -fx-border-radius: 12; }
+.link { -fx-text-fill: -c-primary; -fx-border-color: transparent; -fx-underline: false; -fx-padding: 0; }
+
+/* ---------- Оролтууд ---------- */
+.text-field, .password-field, .text-area, .combo-box, .date-picker {
+    -fx-background-color: -c-surface;
+    -fx-text-fill: -c-text;
+    -fx-prompt-text-fill: -c-muted;
+    -fx-background-radius: 10;
+    -fx-border-color: -c-border;
+    -fx-border-radius: 10;
+    -fx-padding: 9 12;
+}
+.text-area .content { -fx-background-color: -c-surface; -fx-background-radius: 10; }
+.text-field:focused, .password-field:focused, .text-area:focused, .combo-box:focused { -fx-border-color: -c-primary; }
+.combo-box { -fx-padding: 3 6; }
+.combo-box .list-cell { -fx-text-fill: -c-text; -fx-background-color: transparent; }
+.combo-box-popup .list-view { -fx-background-color: -c-surface; -fx-border-color: -c-border; }
+.combo-box-popup .list-cell { -fx-background-color: -c-surface; -fx-text-fill: -c-text; -fx-padding: 8 12; }
+.combo-box-popup .list-cell:hover { -fx-background-color: -c-surface-2; }
+.form-label { -fx-text-fill: -c-muted; -fx-font-size: 12px; -fx-font-weight: 600; }
+
+/* ---------- Нэвтрэх дэлгэц ---------- */
+.auth-hero {
+    -fx-background-color: linear-gradient(to bottom right, #0f766e, #0e7490 55%, #1e3a8a);
+    -fx-padding: 48;
+}
+.auth-hero .label { -fx-text-fill: white; }
+.hero-title { -fx-font-size: 34px; -fx-font-weight: bold; }
+.hero-feature { -fx-font-size: 15px; -fx-opacity: 0.92; }
+.auth-form { -fx-background-color: -c-bg; -fx-padding: 48; }
+.logo-box {
+    -fx-background-color: -c-primary; -fx-background-radius: 14;
+    -fx-min-width: 48; -fx-min-height: 48; -fx-pref-width: 48; -fx-pref-height: 48; -fx-alignment: center;
+}
+.logo-box .label { -fx-text-fill: -c-on-primary; -fx-font-size: 24px; -fx-font-weight: bold; }
+.logo-box.small-logo { -fx-min-width: 38; -fx-min-height: 38; -fx-pref-width: 38; -fx-pref-height: 38; -fx-background-radius: 11; }
+.logo-box.small-logo .label { -fx-font-size: 19px; }
+
+/* ---------- Layout ---------- */
+.sidebar {
+    -fx-background-color: -c-surface;
+    -fx-border-color: transparent -c-border transparent transparent;
+    -fx-padding: 20 14;
+    -fx-spacing: 6;
+    -fx-pref-width: 230;
+}
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -c-muted;
+    -fx-alignment: center-left;
+    -fx-padding: 11 14;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
+}
+.nav-button:hover { -fx-background-color: -c-surface-2; -fx-text-fill: -c-text; }
+.nav-button:selected { -fx-background-color: -c-primary-soft; -fx-text-fill: -c-primary; }
+.nav-icon { -fx-font-size: 16px; -fx-min-width: 20; -fx-alignment: center; }
+.nav-button .nav-icon { -fx-text-fill: -c-muted; }
+.nav-button:selected .nav-icon { -fx-text-fill: -c-primary; }
+
+.topbar {
+    -fx-background-color: -c-surface;
+    -fx-border-color: transparent transparent -c-border transparent;
+    -fx-padding: 12 28;
+    -fx-spacing: 16;
+    -fx-alignment: center-left;
+}
+.content { -fx-padding: 26 30; -fx-spacing: 18; -fx-background-color: -c-bg; }
+.scroll-pane, .scroll-pane > .viewport { -fx-background-color: transparent; -fx-background: transparent; }
+.scroll-pane { -fx-padding: 0; }
+.scroll-bar { -fx-background-color: transparent; }
+.scroll-bar .thumb { -fx-background-color: -c-border; -fx-background-radius: 8; }
+.scroll-bar .increment-button, .scroll-bar .decrement-button { -fx-padding: 0; -fx-opacity: 0; }
+
+/* ---------- Avatar, XP ---------- */
+.avatar {
+    -fx-background-color: -c-primary; -fx-background-radius: 999;
+    -fx-min-width: 42; -fx-min-height: 42; -fx-max-width: 42; -fx-max-height: 42; -fx-alignment: center;
+}
+.avatar .label { -fx-text-fill: -c-on-primary; -fx-font-weight: bold; -fx-font-size: 17px; }
+.level-chip {
+    -fx-background-color: -c-gold-soft; -fx-text-fill: -c-gold; -fx-background-radius: 999;
+    -fx-padding: 3 10; -fx-font-weight: bold; -fx-font-size: 12px;
+}
+.streak-chip {
+    -fx-background-color: -c-surface-2; -fx-background-radius: 999; -fx-padding: 6 12;
+    -fx-border-color: -c-border; -fx-border-radius: 999;
+}
+.xp-bar { -fx-pref-height: 12; -fx-min-height: 12; }
+.xp-bar > .track { -fx-background-color: -c-surface-2; -fx-background-radius: 99; -fx-background-insets: 0; -fx-border-color: -c-border; -fx-border-radius: 99; }
+.xp-bar > .bar { -fx-background-color: linear-gradient(to right, -c-primary, -c-gold); -fx-background-radius: 99; -fx-background-insets: 1; -fx-padding: 5; }
+.progress-bar > .track { -fx-background-color: -c-surface-2; -fx-background-radius: 99; -fx-background-insets: 0; }
+.progress-bar > .bar { -fx-background-color: -c-primary; -fx-background-radius: 99; -fx-background-insets: 0; -fx-padding: 4; }
+
+/* ---------- Картууд ---------- */
+.card {
+    -fx-background-color: -c-surface;
+    -fx-background-radius: 16;
+    -fx-border-color: -c-border;
+    -fx-border-radius: 16;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, -c-shadow, 14, 0.1, 0, 3);
+}
+.stat-value { -fx-font-size: 28px; -fx-font-weight: bold; }
+.stat-icon {
+    -fx-background-radius: 12; -fx-min-width: 44; -fx-min-height: 44; -fx-max-width: 44; -fx-max-height: 44;
+    -fx-alignment: center; -fx-font-size: 20px;
+}
+
+/* Өнөөдрийн сорил */
+.task-card { -fx-padding: 0; }
+.task-stripe { -fx-min-height: 8; -fx-pref-height: 8; -fx-background-radius: 16 16 0 0; }
+.task-body { -fx-padding: 18 20 20 20; -fx-spacing: 10; }
+.task-title { -fx-font-size: 18px; -fx-font-weight: bold; -fx-wrap-text: true; }
+.task-card.done { -fx-opacity: 0.85; }
+.task-card.done .task-title { -fx-strikethrough: true; -fx-text-fill: -c-muted; }
+.cat-chip { -fx-background-radius: 999; -fx-padding: 3 10; -fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: white; }
+.xp-chip { -fx-background-color: -c-gold-soft; -fx-text-fill: -c-gold; -fx-background-radius: 999; -fx-padding: 3 10; -fx-font-weight: bold; -fx-font-size: 12px; }
+.bonus-chip { -fx-background-color: -c-gold; -fx-text-fill: #1f1300; -fx-background-radius: 999; -fx-padding: 3 10; -fx-font-weight: bold; -fx-font-size: 12px; }
+.stars { -fx-text-fill: -c-gold; -fx-font-size: 15px; }
+.dice { -fx-font-size: 72px; -fx-text-fill: -c-primary; }
+.roll-panel { -fx-padding: 40; -fx-spacing: 16; -fx-alignment: center; }
+
+/* Амжилт */
+.ach-card { -fx-padding: 18; -fx-spacing: 8; -fx-alignment: top-center; -fx-pref-width: 200; }
+.ach-icon {
+    -fx-background-radius: 999; -fx-min-width: 64; -fx-min-height: 64; -fx-max-width: 64; -fx-max-height: 64;
+    -fx-alignment: center; -fx-font-size: 30px;
+    -fx-background-color: -c-gold-soft; -fx-text-fill: -c-gold;
+}
+.ach-card.locked .ach-icon { -fx-background-color: -c-surface-2; -fx-text-fill: -c-muted; }
+.ach-card.locked { -fx-opacity: 0.7; }
+
+/* ---------- Хүснэгт ---------- */
+.table-view {
+    -fx-background-color: -c-surface; -fx-border-color: -c-border; -fx-border-radius: 14; -fx-background-radius: 14;
+    -fx-padding: 4; -fx-table-cell-border-color: transparent;
+}
+.table-view .column-header-background { -fx-background-color: -c-surface; -fx-background-radius: 14 14 0 0; }
+.table-view .column-header, .table-view .filler { -fx-background-color: transparent; -fx-border-color: transparent transparent -c-border transparent; -fx-padding: 8 6; }
+.table-view .column-header .label { -fx-text-fill: -c-muted; -fx-font-weight: bold; -fx-alignment: center-left; }
+.table-row-cell { -fx-background-color: -c-surface; -fx-border-color: transparent transparent -c-border transparent; -fx-cell-size: 42; }
+.table-row-cell:odd { -fx-background-color: -c-surface-2; }
+.table-row-cell:selected { -fx-background-color: -c-primary-soft; }
+.table-cell { -fx-text-fill: -c-text; -fx-padding: 0 8; -fx-alignment: center-left; }
+.table-view .placeholder .label { -fx-text-fill: -c-muted; }
+
+/* ---------- Графикууд ---------- */
+.chart { -fx-padding: 4; }
+.chart-plot-background { -fx-background-color: transparent; }
+.chart-vertical-grid-lines { -fx-stroke: transparent; }
+.chart-horizontal-grid-lines { -fx-stroke: -c-border; }
+.chart-alternative-row-fill { -fx-fill: transparent; }
+.axis { -fx-tick-label-fill: -c-muted; }
+.axis:bottom, .axis:left { -fx-border-color: transparent; }
+.axis-tick-mark, .axis-minor-tick-mark { -fx-stroke: transparent; }
+.chart-legend { -fx-background-color: transparent; }
+.chart-legend-item { -fx-text-fill: -c-text; }
+.chart-title { -fx-text-fill: -c-text; }
+.default-color0.chart-bar { -fx-bar-fill: -c-primary; -fx-background-radius: 6 6 0 0; }
+.chart-series-line { -fx-stroke: -c-primary; -fx-stroke-width: 3px; }
+.chart-line-symbol { -fx-background-color: -c-primary, -c-surface; }
+.chart-pie-label { -fx-fill: -c-text; }
+.chart-pie-label-line { -fx-stroke: -c-muted; }
+.chart-pie { -fx-border-color: -c-surface; -fx-border-width: 2; }
+
+/* ---------- Toast / Popup ---------- */
+.toast {
+    -fx-background-color: -c-text; -fx-background-radius: 12; -fx-padding: 12 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 18, 0.2, 0, 4);
+}
+.toast .label { -fx-text-fill: -c-bg; -fx-font-weight: 600; }
+.toast.error { -fx-background-color: -c-danger; }
+.toast.error .label { -fx-text-fill: white; }
+.overlay-dim { -fx-background-color: rgba(0,0,0,0.55); }
+.reward-card {
+    -fx-background-color: -c-surface; -fx-background-radius: 22; -fx-border-color: -c-gold; -fx-border-radius: 22;
+    -fx-border-width: 2; -fx-padding: 32 40; -fx-spacing: 12; -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 30, 0.2, 0, 8);
+}
+.reward-xp { -fx-font-size: 44px; -fx-font-weight: bold; -fx-text-fill: -c-gold; }
+.reward-title { -fx-font-size: 22px; -fx-font-weight: bold; }
+.separator .line { -fx-border-color: -c-border; }
+
+/* Dialog */
+.dialog-pane { -fx-background-color: -c-surface; }
+.dialog-pane .content .label, .dialog-pane .header-panel .label { -fx-text-fill: -c-text; }
+.dialog-pane .header-panel { -fx-background-color: -c-surface-2; }
+.segmented .toggle-button {
+    -fx-background-color: -c-surface; -fx-text-fill: -c-muted; -fx-border-color: -c-border;
+    -fx-background-radius: 0; -fx-border-radius: 0; -fx-padding: 7 14; -fx-cursor: hand;
+}
+.segmented .toggle-button:selected { -fx-background-color: -c-primary; -fx-text-fill: -c-on-primary; -fx-border-color: -c-primary; }
+.segmented .toggle-button.first { -fx-background-radius: 10 0 0 10; -fx-border-radius: 10 0 0 10; }
+.segmented .toggle-button.last { -fx-background-radius: 0 10 10 0; -fx-border-radius: 0 10 10 0; }
+
+/* Нэвтрэх дэлгэцийн онцлох дүрс */
+.hero-icon {
+    -fx-font-size: 18px; -fx-background-color: rgba(255,255,255,0.16); -fx-background-radius: 10;
+    -fx-min-width: 36; -fx-min-height: 36; -fx-alignment: center;
+}
+
+/* Нүүр хуудасны түвшний дугуй */
+.level-circle {
+    -fx-background-color: -c-gold-soft; -fx-background-radius: 999;
+    -fx-border-color: -c-gold; -fx-border-radius: 999; -fx-border-width: 3;
+}
+.level-number { -fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: -c-gold; }
+.bonus-card { -fx-border-color: -c-gold; }

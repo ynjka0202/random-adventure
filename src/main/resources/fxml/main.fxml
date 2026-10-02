@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Үндсэн цонх: зүүн цэс, дээд мөр, төв хэсэг (хуудас FXML-ууд энд ачаалагдана). -->
+<StackPane fx:id="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="mn.adventure.controller.MainController">
+   <fx:define>
+      <ToggleGroup fx:id="navGroup" />
+   </fx:define>
+   <BorderPane>
+      <!-- ================= Зүүн цэс ================= -->
+      <left>
+         <VBox minWidth="230.0" styleClass="sidebar">
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <padding><Insets bottom="18.0" left="6.0" right="6.0" /></padding>
+               <StackPane styleClass="logo-box, small-logo"><Label text="⚄" /></StackPane>
+               <VBox>
+                  <Label styleClass="h3" text="Random" />
+                  <Label styleClass="muted, small" text="Adventure" />
+               </VBox>
+            </HBox>
+            <VBox spacing="4.0">
+               <ToggleButton fx:id="navDashboard" maxWidth="1.7976931348623157E308" onAction="#goDashboard" styleClass="nav-button" text="Нүүр" toggleGroup="$navGroup">
+                  <graphic><Label styleClass="nav-icon" text="⌂" /></graphic>
+               </ToggleButton>
+               <ToggleButton fx:id="navToday" maxWidth="1.7976931348623157E308" onAction="#goToday" styleClass="nav-button" text="Өнөөдрийн сорил" toggleGroup="$navGroup">
+                  <graphic><Label styleClass="nav-icon" text="⚄" /></graphic>
+               </ToggleButton>
+               <ToggleButton fx:id="navAchievements" maxWidth="1.7976931348623157E308" onAction="#goAchievements" styleClass="nav-button" text="Амжилт" toggleGroup="$navGroup">
+                  <graphic><Label styleClass="nav-icon" text="★" /></graphic>
+               </ToggleButton>
+               <ToggleButton fx:id="navStats" maxWidth="1.7976931348623157E308" onAction="#goStats" styleClass="nav-button" text="Статистик" toggleGroup="$navGroup">
+                  <graphic><Label styleClass="nav-icon" text="▥" /></graphic>
+               </ToggleButton>
+               <ToggleButton fx:id="navHistory" maxWidth="1.7976931348623157E308" onAction="#goHistory" styleClass="nav-button" text="Түүх" toggleGroup="$navGroup">
+                  <graphic><Label styleClass="nav-icon" text="☰" /></graphic>
+               </ToggleButton>
+               <ToggleButton fx:id="navCustom" maxWidth="1.7976931348623157E308" onAction="#goCustom" styleClass="nav-button" text="Миний сорилууд" toggleGroup="$navGroup">
+                  <graphic><Label styleClass="nav-icon" text="✎" /></graphic>
+               </ToggleButton>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <Separator />
+            <Button fx:id="themeButton" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" onAction="#toggleTheme" styleClass="btn-ghost" text="☀   Light горим" />
+            <Button alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" onAction="#logout" styleClass="btn-ghost" text="⎋   Гарах" />
+         </VBox>
+      </left>
+      <!-- ================= Дээд мөр ================= -->
+      <top>
+         <HBox styleClass="topbar">
+            <VBox spacing="2.0">
+               <Label fx:id="greetingLabel" styleClass="h2" text="Сайн уу, {нэр}!" />
+               <Label fx:id="dateLabel" styleClass="muted" text="{огноо · гараг}" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER_RIGHT" spacing="16.0">
+               <Label fx:id="streakLabel" styleClass="streak-chip" text="♨  0 өдөр" />
+               <StackPane styleClass="avatar"><Label fx:id="avatarLabel" text="A" /></StackPane>
+               <VBox spacing="4.0">
+                  <HBox alignment="CENTER_LEFT" spacing="8.0">
+                     <Label fx:id="nameLabel" styleClass="h3" text="Нэр" />
+                     <Label fx:id="levelLabel" styleClass="level-chip" text="Lv 1" />
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="8.0">
+                     <ProgressBar fx:id="xpBar" prefWidth="190.0" progress="0.0" styleClass="xp-bar" />
+                     <Label fx:id="xpLabel" styleClass="muted, small" text="0 / 100 XP" />
+                  </HBox>
+               </VBox>
+            </HBox>
+         </HBox>
+      </top>
+      <!-- ================= Төв хэсэг ================= -->
+      <center>
+         <ScrollPane fx:id="scroll" fitToWidth="true" hbarPolicy="NEVER" />
+      </center>
+   </BorderPane>
+   <!-- Шагналын popup-д зориулсан давхарга -->
+   <StackPane fx:id="overlay" pickOnBounds="false" />
+   <!-- Toast мэдэгдэл -->
+   <VBox fx:id="toasts" alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" pickOnBounds="false" spacing="8.0" StackPane.alignment="BOTTOM_RIGHT">
+      <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+   </VBox>
+</StackPane>

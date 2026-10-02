@@ -1,0 +1,19 @@
+/* Dark theme — зөвхөн өнгөний хувьсагчид */
+.root {
+    -c-bg: #0b1417;
+    -c-surface: #111e22;
+    -c-surface-2: #172a30;
+    -c-border: #22383f;
+    -c-text: #e4eff1;
+    -c-muted: #8ea3a8;
+    -c-primary: #2dd4bf;
+    -c-primary-strong: #5eead4;
+    -c-primary-soft: #134e4a;
+    -c-on-primary: #042f2b;
+    -c-gold: #fbbf24;
+    -c-gold-soft: #3b2f10;
+    -c-success: #4ade80;
+    -c-success-soft: #14361f;
+    -c-danger: #f87171;
+    -c-shadow: rgba(0,0,0,0.35);
+}

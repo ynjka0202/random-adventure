@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Өнөөдрийн сорил. Сорилын картуудыг controller санамсаргүй сонголтоор үүсгэж grid-д нэмнэ. -->
+<VBox spacing="18.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="mn.adventure.controller.TodayController">
+   <VBox spacing="4.0">
+      <Label styleClass="h1" text="Өнөөдрийн сорил" />
+      <Label fx:id="subtitleLabel" styleClass="muted" text="Шоогоо хаяж өнөөдрийн 3 адал явдлаа сугална уу." />
+   </VBox>
+   <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" progress="0.0" />
+
+   <!-- Сорил сугалаагүй үед -->
+   <VBox fx:id="rollPanel" alignment="CENTER" spacing="16.0">
+      <styleClass><String fx:value="card" /><String fx:value="roll-panel" /></styleClass>
+      <Label fx:id="diceLabel" styleClass="dice" text="⚄" />
+      <Label styleClass="h2" text="Өнөөдөр юу хийх вэ?" />
+      <Label styleClass="muted" text="6 ангиллаас санамсаргүйгээр 3 өөр сорил сонгогдоно." />
+      <Button fx:id="rollButton" onAction="#roll" text="⚄  Сорилоо сугалах">
+         <styleClass><String fx:value="btn-primary" /><String fx:value="btn-lg" /></styleClass>
+      </Button>
+   </VBox>
+
+   <!-- Сорилын картууд -->
+   <TilePane fx:id="taskGrid" hgap="18.0" prefColumns="3" prefTileWidth="320.0" tileAlignment="TOP_LEFT" vgap="18.0" />
+
+   <!-- 3 сорилоо дуусгасны дараа -->
+   <VBox fx:id="bonusPanel" spacing="12.0" styleClass="card, bonus-card">
+      <HBox alignment="CENTER_LEFT" spacing="16.0">
+         <VBox spacing="4.0">
+            <Label styleClass="h3" text="Гайхалтай! Өнөөдрийн 3 сорилоо бүгдийг нь биелүүллээ." />
+            <Label styleClass="muted" text="Нэмэлт хүч байна уу? Бонус сорил 1.5 дахин их XP өгнө." />
+         </VBox>
+         <Region HBox.hgrow="ALWAYS" />
+         <Button onAction="#takeBonus" text="★  Бонус сорил авах">
+            <styleClass><String fx:value="btn-gold" /><String fx:value="btn-lg" /></styleClass>
+         </Button>
+      </HBox>
+   </VBox>
+   <VBox fx:id="donePanel" styleClass="card">
+      <Label styleClass="h3" text="★ Өнөөдрийн бүх сорилоо биелүүллээ. Маргааш шинэ адал явдал хүлээж байна!" />
+   </VBox>
+</VBox>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Миний сорилууд: өөрийн сорил нэмэх форм + жагсаалт. -->
+<VBox spacing="18.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="mn.adventure.controller.CustomChallengesController">
+   <fx:define>
+      <ToggleGroup fx:id="difficultyGroup" />
+   </fx:define>
+   <VBox spacing="4.0">
+      <Label styleClass="h1" text="Миний сорилууд" />
+      <Label styleClass="muted" text="Өөрийн сорилоо нэмбэл санамсаргүй сонголтын санд орж, өдөр бүрийн сорилд гарч ирнэ." />
+   </VBox>
+   <VBox maxWidth="760.0" spacing="12.0" styleClass="card">
+      <Label styleClass="h2" text="Шинэ сорил нэмэх" />
+      <VBox spacing="6.0">
+         <Label styleClass="form-label" text="Сорилын нэр *" />
+         <TextField fx:id="titleField" promptText="Жишээ: 15 минут гитар тогло" />
+      </VBox>
+      <VBox spacing="6.0">
+         <Label styleClass="form-label" text="Тайлбар" />
+         <TextArea fx:id="descriptionArea" prefRowCount="3" promptText="Нэмэлт тайлбар (заавал биш)" wrapText="true" />
+      </VBox>
+      <HBox spacing="16.0">
+         <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+            <Label styleClass="form-label" text="Ангилал" />
+            <ComboBox fx:id="categoryBox" maxWidth="1.7976931348623157E308" />
+         </VBox>
+         <VBox spacing="6.0">
+            <Label styleClass="form-label" text="Хүндрэл" />
+            <HBox styleClass="segmented">
+               <ToggleButton fx:id="easyButton" selected="true" styleClass="first" text="★☆☆  Хялбар · 10 XP" toggleGroup="$difficultyGroup" />
+               <ToggleButton fx:id="mediumButton" text="★★☆  Дунд · 25 XP" toggleGroup="$difficultyGroup" />
+               <ToggleButton fx:id="hardButton" styleClass="last" text="★★★  Хэцүү · 50 XP" toggleGroup="$difficultyGroup" />
+            </HBox>
+         </VBox>
+      </HBox>
+      <Label fx:id="errorLabel" styleClass="error-text" />
+      <HBox>
+         <Button onAction="#addChallenge" styleClass="btn-primary" text="+  Сорил нэмэх" />
+      </HBox>
+   </VBox>
+   <VBox fx:id="listCard" maxWidth="760.0" spacing="12.0" styleClass="card">
+      <Label fx:id="listTitle" styleClass="h2" text="Миний нэмсэн сорилууд (0)" />
+   </VBox>
+</VBox>

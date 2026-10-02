@@ -1,0 +1,19 @@
+/* Light theme — зөвхөн өнгөний хувьсагчид */
+.root {
+    -c-bg: #f1f6f7;
+    -c-surface: #ffffff;
+    -c-surface-2: #f5f9f9;
+    -c-border: #dde7e9;
+    -c-text: #0f1f24;
+    -c-muted: #5b6d72;
+    -c-primary: #0d9488;
+    -c-primary-strong: #0f766e;
+    -c-primary-soft: #d5f5f0;
+    -c-on-primary: #ffffff;
+    -c-gold: #d97706;
+    -c-gold-soft: #fdf0d5;
+    -c-success: #15803d;
+    -c-success-soft: #dcf5e4;
+    -c-danger: #dc2626;
+    -c-shadow: rgba(15,31,36,0.10);
+}

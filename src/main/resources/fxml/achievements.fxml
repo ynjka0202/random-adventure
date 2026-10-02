@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Амжилтын самбар. Badge картуудыг controller үүсгэнэ. -->
+<VBox spacing="18.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="mn.adventure.controller.AchievementsController">
+   <VBox spacing="4.0">
+      <Label styleClass="h1" text="Амжилт" />
+      <Label fx:id="subtitleLabel" styleClass="muted" text="0 / 13 амжилт нээгдсэн" />
+   </VBox>
+   <ProgressBar fx:id="totalBar" maxWidth="1.7976931348623157E308" progress="0.0" />
+   <FlowPane fx:id="grid" hgap="16.0" vgap="16.0" />
+</VBox>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Нүүр хуудас. Статистикийн картууд болон жагсаалтыг controller өгөгдлөөр дүүргэнэ. -->
+<VBox spacing="18.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="mn.adventure.controller.DashboardController">
+   <VBox spacing="4.0">
+      <Label styleClass="h1" text="Нүүр" />
+      <Label styleClass="muted" text="Таны адал явдлын ерөнхий тойм" />
+   </VBox>
+   <HBox fx:id="statsRow" spacing="16.0" />
+   <HBox spacing="16.0">
+      <VBox fx:id="todayCard" minWidth="420.0" spacing="12.0" styleClass="card" HBox.hgrow="ALWAYS">
+         <HBox alignment="CENTER_LEFT">
+            <Label styleClass="h2" text="Өнөөдрийн сорил" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="todayButton" onAction="#goToday" styleClass="btn-ghost" text="Сорил руу очих  →" />
+         </HBox>
+         <VBox fx:id="todayList" spacing="12.0" />
+      </VBox>
+      <VBox alignment="TOP_CENTER" maxWidth="300.0" minWidth="300.0" spacing="12.0" styleClass="card">
+         <Label styleClass="h2" text="Түвшин" />
+         <StackPane maxHeight="110.0" maxWidth="110.0" minHeight="110.0" minWidth="110.0" styleClass="level-circle">
+            <Label fx:id="levelNumber" styleClass="level-number" text="1" />
+         </StackPane>
+         <Label fx:id="levelTitle" styleClass="h3" text="Шинэ адал явдалт" />
+         <ProgressBar fx:id="levelBar" maxWidth="1.7976931348623157E308" prefWidth="240.0" progress="0.0" styleClass="xp-bar" />
+         <Label fx:id="levelHint" styleClass="muted" text="100 XP дутуу · Lv 2" />
+      </VBox>
+   </HBox>
+   <HBox spacing="16.0">
+      <VBox minWidth="420.0" spacing="12.0" styleClass="card" HBox.hgrow="ALWAYS">
+         <Label styleClass="h2" text="Сүүлийн 7 хоногийн XP" />
+         <BarChart fx:id="weekChart" animated="false" barGap="4.0" categoryGap="18.0" legendVisible="false" prefHeight="230.0">
+            <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+            <yAxis><NumberAxis minorTickVisible="false" side="LEFT" /></yAxis>
+         </BarChart>
+      </VBox>
+      <VBox maxWidth="300.0" minWidth="300.0" spacing="12.0" styleClass="card">
+         <Label styleClass="h2" text="Сүүлийн амжилтууд" />
+         <VBox fx:id="achievementList" spacing="12.0" />
+         <Region VBox.vgrow="ALWAYS" />
+         <Button onAction="#goAchievements" styleClass="btn-ghost" text="Бүх амжилт  →" />
+      </VBox>
+   </HBox>
+</VBox>

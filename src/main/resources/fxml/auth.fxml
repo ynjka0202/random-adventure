@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Нэвтрэх / Бүртгүүлэх дэлгэц. Scene Builder-ээр нээж засах боломжтой. -->
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="mn.adventure.controller.AuthController">
+   <left>
+      <VBox prefWidth="470.0" spacing="28.0" styleClass="auth-hero">
+         <HBox alignment="CENTER_LEFT" spacing="12.0">
+            <StackPane styleClass="logo-box"><Label text="⚄" /></StackPane>
+            <Label styleClass="h2" text="Random Adventure" />
+         </HBox>
+         <Region VBox.vgrow="ALWAYS" />
+         <Label styleClass="hero-title" text="Өдөр бүр шинэ&#10;адал явдал." />
+         <Label styleClass="hero-feature" text="Санамсаргүй сорил аваад, гүйцэтгэж, XP цуглуулж,&#10;түвшнээ ахиулаарай." />
+         <VBox spacing="14.0">
+            <HBox alignment="CENTER_LEFT" spacing="14.0">
+               <Label styleClass="hero-icon" text="⚄" />
+               <Label styleClass="hero-feature" text="Өдөр бүр 3 санамсаргүй сорил" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="14.0">
+               <Label styleClass="hero-icon" text="★" />
+               <Label styleClass="hero-feature" text="XP, түвшин, амжилтын систем" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="14.0">
+               <Label styleClass="hero-icon" text="♨" />
+               <Label styleClass="hero-feature" text="Дараалсан өдрийн streak бонус" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="14.0">
+               <Label styleClass="hero-icon" text="▥" />
+               <Label styleClass="hero-feature" text="Ахицаа график, түүхээр хянах" />
+            </HBox>
+         </VBox>
+         <Region VBox.vgrow="ALWAYS" />
+         <Label styleClass="small" text="© 2026 Random Adventure Generator" />
+      </VBox>
+   </left>
+   <center>
+      <VBox alignment="CENTER" styleClass="auth-form">
+         <HBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="themeButton" onAction="#toggleTheme" styleClass="btn-ghost" text="☀  Light" />
+         </HBox>
+         <StackPane VBox.vgrow="ALWAYS">
+            <!-- ================= Нэвтрэх форм ================= -->
+            <VBox fx:id="loginPane" maxWidth="420.0" spacing="16.0" StackPane.alignment="CENTER">
+               <padding><Insets bottom="10.0" top="10.0" /></padding>
+               <VBox spacing="6.0">
+                  <Label styleClass="h1" text="Тавтай морил!" />
+                  <Label styleClass="muted" text="Адал явдлаа үргэлжлүүлэхийн тулд нэвтэрнэ үү." />
+               </VBox>
+               <VBox spacing="6.0">
+                  <Label styleClass="form-label" text="Нэвтрэх нэр" />
+                  <TextField fx:id="loginField" promptText="Хэрэглэгчийн нэр эсвэл имэйл" />
+               </VBox>
+               <VBox spacing="6.0">
+                  <Label styleClass="form-label" text="Нууц үг" />
+                  <PasswordField fx:id="loginPassword" promptText="Нууц үг" />
+               </VBox>
+               <Label fx:id="loginError" styleClass="error-text" wrapText="true" />
+               <Button fx:id="loginButton" defaultButton="true" maxWidth="1.7976931348623157E308" onAction="#handleLogin" text="Нэвтрэх">
+                  <styleClass><String fx:value="btn-primary" /><String fx:value="btn-lg" /></styleClass>
+               </Button>
+               <HBox alignment="CENTER" spacing="4.0">
+                  <Label styleClass="muted" text="Бүртгэлгүй юу?" />
+                  <Hyperlink onAction="#showRegister" styleClass="link" text="Бүртгэл үүсгэх" />
+               </HBox>
+            </VBox>
+            <!-- ================= Бүртгүүлэх форм ================= -->
+            <VBox fx:id="registerPane" managed="false" maxWidth="420.0" spacing="16.0" visible="false" StackPane.alignment="CENTER">
+               <padding><Insets bottom="10.0" top="10.0" /></padding>
+               <VBox spacing="6.0">
+                  <Label styleClass="h1" text="Бүртгэл үүсгэх" />
+                  <Label styleClass="muted" text="Анхны сорилоо авахад ганцхан алхам үлдлээ." />
+               </VBox>
+               <VBox spacing="6.0">
+                  <Label styleClass="form-label" text="Нэр" />
+                  <TextField fx:id="regName" promptText="Жишээ: Анжи" />
+               </VBox>
+               <VBox spacing="6.0">
+                  <Label styleClass="form-label" text="Хэрэглэгчийн нэр" />
+                  <TextField fx:id="regUsername" promptText="latin үсэг, тоо, _" />
+               </VBox>
+               <VBox spacing="6.0">
+                  <Label styleClass="form-label" text="Имэйл" />
+                  <TextField fx:id="regEmail" promptText="you@example.com" />
+               </VBox>
+               <HBox spacing="12.0">
+                  <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                     <Label styleClass="form-label" text="Нууц үг" />
+                     <PasswordField fx:id="regPassword" promptText="Хамгийн багадаа 6 тэмдэгт" />
+                  </VBox>
+                  <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                     <Label styleClass="form-label" text="Нууц үг давтах" />
+                     <PasswordField fx:id="regPassword2" promptText="Нууц үгээ давтана уу" />
+                  </VBox>
+               </HBox>
+               <Label fx:id="registerError" styleClass="error-text" wrapText="true" />
+               <Button fx:id="registerButton" maxWidth="1.7976931348623157E308" onAction="#handleRegister" text="Бүртгүүлэх">
+                  <styleClass><String fx:value="btn-primary" /><String fx:value="btn-lg" /></styleClass>
+               </Button>
+               <HBox alignment="CENTER" spacing="4.0">
+                  <Label styleClass="muted" text="Бүртгэлтэй юу?" />
+                  <Hyperlink onAction="#showLogin" styleClass="link" text="Нэвтрэх" />
+               </HBox>
+            </VBox>
+         </StackPane>
+      </VBox>
+   </center>
+</BorderPane>
